@@ -1,4 +1,4 @@
-// Kenzie Whitman, Section 3
+// Weston Watson, Section 3
 
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;

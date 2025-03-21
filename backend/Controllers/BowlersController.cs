@@ -1,4 +1,4 @@
-// Kenzie Whitman, Section 3
+// Weston Watson, Section 3
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

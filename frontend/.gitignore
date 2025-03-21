@@ -1,0 +1,23 @@
+# Ignore Node.js dependencies (frontend)
+frontend/node_modules/
+frontend/build/
+frontend/.env
+
+# Ignore .NET build files (backend)
+backend/bin/
+backend/obj/
+backend/appsettings.Development.json
+backend/appsettings.Local.json
+backend/.vs/
+backend/.vscode/
+backend/.DS_Store
+
+# Ignore Logs & Debug Files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Ignore MacOS system files
+.DS_Store
+node_modules
