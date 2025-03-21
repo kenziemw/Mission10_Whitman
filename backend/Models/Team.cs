@@ -1,10 +1,13 @@
-//kenzie whitman section 3
-namespace backend.Models
+// Kenzie Whitman, Section 3
+
+using System.ComponentModel.DataAnnotations;
+
+namespace BowlingAPI.Models
 {
     public class Team
     {
+        [Key]
         public int TeamID { get; set; }
         public string? TeamName { get; set; }
-        public List<Bowlers>? Bowlers { get; set; }
     }
 }

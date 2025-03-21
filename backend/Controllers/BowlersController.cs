@@ -1,12 +1,11 @@
+// Kenzie Whitman, Section 3
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using backend.Data;  
-using backend.Models; 
-using System.Linq;
-using System.Threading.Tasks;
-using System.Collections.Generic;
+using BowlingAPI.Data;
+using BowlingAPI.Models;
 
-namespace backend.Controllers 
+namespace BowlingAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -22,15 +21,9 @@ namespace backend.Controllers
         [HttpGet]
         public async Task<IActionResult> GetBowlers()
         {
-            if (_context.Bowlers == null || !_context.Bowlers.Any())
-            {
-                return NotFound("No bowlers found in the database.");
-            }
-
             var bowlers = await _context.Bowlers
                 .Include(b => b.Team)
-                .Where(b => b.Team != null && 
-                            (b.Team.TeamName == "Marlins" || b.Team.TeamName == "Sharks"))
+                .Where(b => b.Team != null && (b.Team.TeamName == "Marlins" || b.Team.TeamName == "Sharks")) // Check this
                 .Select(b => new
                 {
                     Name = $"{b.BowlerFirstName} {b.BowlerMiddleInit} {b.BowlerLastName}",
@@ -42,11 +35,6 @@ namespace backend.Controllers
                     Phone = b.BowlerPhoneNumber
                 })
                 .ToListAsync();
-
-            if (!bowlers.Any())
-            {
-                return NotFound("No bowlers found for the Marlins or Sharks teams.");
-            }
 
             return Ok(bowlers);
         }

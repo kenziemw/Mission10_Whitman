@@ -3900,19 +3900,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/makenziewhitman/.nuget/packages/": {}
+    "/Users/westonwatson/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/makenziewhitman/BowlingLeagueAPI/BowlingLeagueApp/backend/backend.csproj",
-      "projectName": "backend",
-      "projectPath": "/Users/makenziewhitman/BowlingLeagueAPI/BowlingLeagueApp/backend/backend.csproj",
-      "packagesPath": "/Users/makenziewhitman/.nuget/packages/",
-      "outputPath": "/Users/makenziewhitman/BowlingLeagueAPI/BowlingLeagueApp/backend/obj/",
+      "projectUniqueName": "/Users/westonwatson/Documents/Winter 2025/413/Mission10_Watson/Backend/BowlingAPI.csproj",
+      "projectName": "BowlingAPI",
+      "projectPath": "/Users/westonwatson/Documents/Winter 2025/413/Mission10_Watson/Backend/BowlingAPI.csproj",
+      "packagesPath": "/Users/westonwatson/.nuget/packages/",
+      "outputPath": "/Users/westonwatson/Documents/Winter 2025/413/Mission10_Watson/Backend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/makenziewhitman/.nuget/NuGet/NuGet.Config"
+        "/Users/westonwatson/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"

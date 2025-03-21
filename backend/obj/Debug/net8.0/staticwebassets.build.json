@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "7/yvsnDRTixX0vVer35KSjS1HzfM4rGxA/gc1emwSdw=",
-  "Source": "backend",
-  "BasePath": "_content/backend",
+  "Hash": "trO3RfuDI2QZhnScjNdZ4cwR14/h40finkRjYdZLBPQ=",
+  "Source": "BowlingAPI",
+  "BasePath": "_content/BowlingAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

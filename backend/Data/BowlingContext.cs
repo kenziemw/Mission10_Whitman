@@ -1,27 +1,21 @@
-//kenzie whitman section 3
-using Microsoft.EntityFrameworkCore;
-using backend.Models;  
+// Kenzie Whitman, Section 3
 
-namespace backend.Data  
+using Microsoft.EntityFrameworkCore;
+using BowlingAPI.Models;
+
+namespace BowlingAPI.Data
 {
     public class BowlingContext : DbContext
     {
         public BowlingContext(DbContextOptions<BowlingContext> options) : base(options) { }
 
-        public DbSet<Bowlers> Bowlers { get; set; }  // Ensure this matches the database table
+        public DbSet<Bowler> Bowlers { get; set; }
         public DbSet<Team> Teams { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Bowlers>()
-                .HasKey(b => b.BowlerID);  // Matches the primary key in SQLite
-
-            modelBuilder.Entity<Bowlers>()
-                .HasOne(b => b.Team)
-                .WithMany(t => t.Bowlers)
-                .HasForeignKey(b => b.TeamID);
-
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Team>().ToTable("Teams"); // Ensure correct table mapping
+            modelBuilder.Entity<Bowler>().ToTable("Bowlers"); // 👈 Ensure correct table mapping
         }
     }
 }

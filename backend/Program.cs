@@ -1,37 +1,28 @@
-//kenzie whitman section 3
-using backend.Data;  
+// Weston Watson, Section 3
+
 using Microsoft.EntityFrameworkCore;
+using BowlingAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add CORS policy
+// Add database context
+builder.Services.AddDbContext<BowlingContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("BowlingConnection")));
+
+// Enable CORS for React frontend
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll",
-        builder => builder.AllowAnyOrigin()
-                          .AllowAnyMethod()
-                          .AllowAnyHeader());
+    options.AddPolicy("AllowReactApp", builder =>
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader());
 });
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<BowlingContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("BowlingDB"))
-);
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
 var app = builder.Build();
 
-// Enable CORS
-app.UseCors("AllowAll");
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
+app.UseCors("AllowReactApp");
 app.UseAuthorization();
 app.MapControllers();
+
 app.Run();
