@@ -1,4 +1,4 @@
-// Weston Watson, Section 3
+// kenzie whitman section 3 mission 10
 
 using Microsoft.EntityFrameworkCore;
 using BowlingAPI.Data;

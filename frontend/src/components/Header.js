@@ -1,4 +1,5 @@
 // Header component
+// kenzie whitman section 3 mission 10
 
 import React from "react";
 
